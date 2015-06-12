@@ -1,0 +1,35 @@
+/*Runlength encoding*/
+#include<bits/stdc++.h>
+using namespace std;
+int i,n,ctr;
+int main()
+{
+char s[1000001];
+while((scanf("%s",s))!=EOF){
+n=strlen(s);
+ctr=1;
+for(i=0;i<n;i++)
+{
+
+    if(s[i]==s[i+1])
+    {
+        ctr++;
+    }
+    else
+    {
+        if(ctr>3)
+        cout<<ctr<<"!"<<s[i];
+        else if(ctr==3)
+            cout<<s[i]<<s[i]<<s[i];
+        else if(ctr==2)
+            cout<<s[i]<<s[i];
+            else
+                cout<<s[i];
+      ctr=1;
+    }
+
+}
+cout<<endl;
+}
+     return 0;
+}
