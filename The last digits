@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long int temp,m,n,i,j,base,ex,a,b;
+ 
+int power(long long int a,long long int b);
+ 
+int main()
+{
+    int t;
+    scanf("%d",&t);
+while(t--)
+{
+      scanf("%lld%lld",&a,&b);
+     printf("%d\n",power(a,b));
+}
+return 0;
+}
+int power(long long int a,long long int b)
+{
+    long long int ans=1;
+    if(a==0 && b==0)
+        return 0;
+    while(b>0)
+    {
+        if(b%2==1)
+            ans=a*ans;
+ 
+        a=a*a;
+        a%=10;
+        ans%=10;
+        b=b/2;
+ 
+    if(ans==0)
+        break;
+    }
+    return ans;
+}
+ 
